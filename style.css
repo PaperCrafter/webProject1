@@ -1,0 +1,512 @@
+﻿@charset "UTF-8";
+
+/* 기본 색상 */
+:root {
+	--main-color: #5D9AB2;
+	--accent-color: #DF6A7A;
+	--dark-main-color: #2B5566;
+	--text-bright-color: #fff;
+	--icon-color: #fff;
+	--icon-bk-color: #ddd;
+	--large-width: 1000px;
+	
+	/*색상 테이블*/
+	--scale-color1: #fff;
+	--scale-color2: #F9F9F9;
+	--scale-color3: #E6E6E6;
+	--scale-color4: #56606A;
+	--scale-color5: #343A40;
+	--scale-color6: #18181D;
+	--scale-color7: #000;
+
+    
+    --blue-color:   #0596e4;
+    --orange-color: #ef870f;
+}
+
+
+
+body {
+	margin: 0;
+	font-family: '맑은 고딕',
+		'Apple SD Gothic Neo', 
+		sans-serif;
+	background-color:var(--scale-color2);
+}
+
+
+#wrapper {
+	z-index:10;
+	position:fixed;
+	top:0;
+	right:0;
+	width:80px;
+	height:80px;
+	text-align: center;
+}
+
+#line-wrapper {
+	top:25%;
+	display:inline-block;
+	margin-left:auto;
+	cursor:pointer;
+	width:56px;
+	height:35px;
+	position:relative;
+}
+
+/* 추가된 부분 */
+.init {
+	animation:none !important;
+}
+
+.line {
+	background:#999999;
+	margin-top:6px;
+	margin-bottom:6px;
+	width:56px;
+	height:7px; 
+	border-radius:2px;
+	box-shadow:0 1px 3px rgba(0,0,0,.5);
+	position:relative;
+}
+
+.line-top {
+    animation:line-top .5s forwards ease-out,
+            line-top-rotate .3s .5s forwards ease-out;
+}
+
+/* 추가된 부분 */
+.top-reverse {
+    animation:line-top-rotate-reverse .3s forwards ease-out,
+            line-top-reverse .5s .3s forwards ease-out;
+}
+
+.line-mid {
+    animation:line-mid .5s forwards ease-out;
+}
+
+/* 추가된 부분 */
+.mid-reverse {
+    animation:line-mid-invisible .3s forwards ease-out, 
+            line-mid-reverse .5s .3s forwards ease-out;
+}
+
+.line-bot {
+    animation:line-bot .5s forwards ease-out,
+            line-bot-rotate .3s .5s forwards ease-out;
+}
+
+/* 추가된 부분 */
+.bot-reverse {
+    animation:line-bot-rotate-reverse .3s forwards ease-out,
+            line-bot-reverse .5s .3s forwards ease-out;
+}
+
+@keyframes line-top {
+    0% {transform:translateY(0px)}
+    100% {transform:translateY(13px)}
+}
+
+/* 추가된 부분 */
+@keyframes line-top-reverse {
+    0% {transform:translateY(13px)}
+    100% {transform:translateY(0px)}
+}
+
+@keyframes line-top-rotate {
+    0% {transform:translateY(13px) rotateZ(0deg)}
+    100% {transform:translateY(13px) rotateZ(45deg)}
+}
+
+/* 추가된 부분 */
+@keyframes line-top-rotate-reverse {
+    0% {transform:translateY(13px) rotateZ(45deg)}
+    100% {transform:translateY(13px) rotateZ(0deg)}
+}
+
+@keyframes line-mid {
+    0% {transform:scale(1)}
+    100% {transform:scale(0)}
+}
+
+/* 추가된 부분 */
+@keyframes line-mid-reverse {
+    0% {transform:scale(0)}
+    100% {transform:scale(1)}
+}
+
+@keyframes line-mid-invisible {
+    0% {transform:scale(0)}
+    100% {transform:scale(0)}
+}
+
+@keyframes line-bot {
+    0% {transform:translateY(0px)}
+    100% {transform:translateY(-13px)}
+}
+
+/* 추가된 부분 */
+@keyframes line-bot-reverse {
+    0% {transform:translateY(-13px)}
+    100% {transform:translateY(0px)}
+}
+
+@keyframes line-bot-rotate {
+    0% {transform:translateY(-13px) rotateZ(0deg)}
+    100% {transform:translateY(-13px) rotateZ(135deg)}
+}
+
+/* 추가된 부분 */
+@keyframes line-bot-rotate-reverse {
+    0% {transform:translateY(-13px) rotateZ(135deg)}
+    100% {transform:translateY(-13px) rotateZ(0deg)}
+}
+
+.menuBox{
+	position:fixed;
+	top:0;
+	left:0;
+	background:black;
+	width:100%;
+	height:80px;
+	opacity: 0.8;
+}
+
+.menuBox div{
+	display:inline-block;
+	color:white;
+	height:100%;
+	width:20%;
+	font-size:45px;
+	text-align:center;
+	vertical-align:middle;
+	font-family: 'Montserrat', sans-serif;
+	line-height:70px;
+	font-weight: bold;
+}
+
+.menuBox .sub span{
+	cursor:pointer;
+}
+
+
+
+@media (min-width: 768px) {
+	header .container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1000px;
+		max-width: var(--large-width);
+		margin-left: auto;
+		margin-right: auto;
+		
+	}
+
+}
+
+@media (max-width: 767px) {
+	/* 작은 화면 전용 설정 */
+	header .container-small {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	header .menuBox{		
+		height:240px;	
+	}
+	
+	.menuBox div{
+		width:100%;
+		height:60px
+	}
+}
+
+@media (min-width: 768px) {
+	/*큰 화면*/
+
+}
+
+
+
+
+.conA {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	min-height: 450px;
+	background-image:url('img/background hearo image.jpg');
+	background-position: center;
+	background-size: cover;
+	color: var(--text-bright-color);
+	text-align: center;
+}
+
+.conA h1 {
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15vw;
+	letter-spacing: 0.1em;
+	margin-left: 0.1em;
+}
+
+.conA img {
+	width: 40%;
+}
+
+.conA p {
+    margin-top :15px;
+	display: inline-block;
+	color: var(--text-bright-color);
+	font-size: 15px;
+	text-decoration: none;
+	opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+	.conA h1 {
+		font-size: 115px;
+	}
+
+	.conA p {
+		font-size: 24px;
+	}
+}
+
+
+.conB .container {
+	padding-top: 2px;
+}
+
+.conB .text {
+	padding: 20px;
+    text-align:center;
+}
+
+.conB h2 {
+    color: var(--blue-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 50px;
+}
+
+.conB #whoIsPC {
+    font-size: 15px;
+}
+
+.conB #intro {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.conB a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    box-shadow: 0 0 0 1px #888;
+    border: solid 3px currentColor;
+    border-radius: 6px;
+    background-color: var( --orange-color);
+    color: #fff;
+    color: var(--text-bright-color);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.conB a:hover	{
+	background-image: linear-gradient(
+		rgba(255,255,255,0.2),
+		rgba(255,255,255,0.2)
+	);
+}
+
+.conB .photo {
+	min-height: 200px;
+	background-image: url(img/project1.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+@media (min-width: 768px) {
+	.conB .container {
+		display: flex;
+		flex-direction: column;
+		max-width: 1000px;
+		max-width: var(--large-width);
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	.conB .photo {
+		flex: 0 0 400px;
+	}
+
+	.conB .text {
+		flex: 1;
+		padding: 50px;
+	}
+	
+	
+}
+
+
+/* 콘텐츠C: 개요(이미지 + 글자) */
+.conC {
+	background-color: var(--main-color);
+	color: var(--text-bright-color);
+}
+
+.conC .text {
+	padding: 20px;
+}
+
+.conC h2 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+.conC p {
+	margin-top: 0;
+	margin-bottom: 20px;
+	font-size: 14px;
+	line-height: 1.8;
+	opacity: 0.8;
+}
+
+.conC a {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 10px 30px;
+	border: solid 3px currentColor;
+	border-radius: 6px;
+	background-color: var(--accent-color);
+	color: #fff;
+	color: var(--text-bright-color);
+	font-size: 14px;
+	text-decoration: none;
+}
+
+.conC a:hover	{
+	background-image: linear-gradient(
+		rgba(255,255,255,0.2),
+		rgba(255,255,255,0.2)
+	);
+}
+
+.conC .photo {
+	min-height: 200px;
+	background-image: url(img/project2.png);
+	background-position: center;
+	background-size: cover;
+}
+
+@media (min-width: 768px) {
+	.conC .container {
+		display: flex;
+		max-width: 1000px;
+		max-width: var(--large-width);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.conC .photo {
+		flex: 3;
+	}
+
+	.conC .text {
+		flex: 2;
+		padding: 50px;
+	}
+}
+
+
+.conD1 .container{
+	padding-top: 20px;
+	padding-bottom: 10px;
+	text-align: center;
+	justify-content: center;
+
+}
+
+
+@media (min-width: 768px){
+	.conD1 .container {
+		display: flex;
+		max-width: var(--large-width);
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+}
+
+
+.conD2 .container {
+	padding-top: 80px;
+	padding-bottom: 20px;
+	
+}
+
+.conD2 .text {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 60px;
+	text-align: center;
+}
+
+.conD2 h2 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+.conD2 p {
+	margin-top: 0;
+	margin-bottom: 20px;
+	font-size: 14px;
+	line-height: 1.8;
+	opacity: 0.8;
+}
+
+.conD2 a {
+	color: #5D9AB2;
+	color: var(--main-color);
+	text-decoration: none;
+}
+
+.conD2 a:hover	{
+	text-decoration: underline;
+}
+
+.conD2 img	{
+	display: inline-block;
+	margin-bottom: 20px;
+	font-size: 40px;
+	width: 2em;
+	line-height: 2em;
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+	.conD2 .container {
+		display: flex;
+		max-width: var(--large-width);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.conD2 .text	{
+		flex: 1;
+	}
+}
+
+
